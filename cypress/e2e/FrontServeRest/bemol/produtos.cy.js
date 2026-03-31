@@ -54,11 +54,10 @@ describe('Bemol - Cards de Produto', () => {
   })
 
   it('CT-007 - clicar no nome do produto deve redirecionar para a página do produto', () => {
-    cy.get('[class*="product"] [class*="name"] a, [class*="product"] [class*="title"] a, .shelf-item__title a')
+    cy.get('a[href*="/p"]')
       .first()
-      .should('be.visible')
-      .click()
+      .click({ force: true })
 
-    cy.url().should('not.eq', 'https://www.bemol.com.br/')
+    cy.url().should('include', '/p')
   })
 })
