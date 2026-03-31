@@ -1,0 +1,1 @@
+Início da análise para elaboração dos casos de teste da página de produtos do site Bemol. O objetivo é mapear os principais fluxos e comportamentos esperados para garantir a qualidade e o funcionamento correto das funcionalidades relacionadas a produtos.
