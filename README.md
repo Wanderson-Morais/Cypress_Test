@@ -1,19 +1,39 @@
-# Testes E2E — FrontServeRest
+# Testes E2E — FrontServeRest & Bemol
 
-Suite de testes automatizados com [Cypress](https://www.cypress.io/) para o frontend do [ServeRest](https://front.serverest.dev), um e-commerce fictício utilizado para prática de QA.
+Suite de testes automatizados com [Cypress](https://www.cypress.io/) cobrindo dois frontends:
 
-## Sobre o projeto
+- **ServeRest** — e-commerce fictício para prática de QA: https://front.serverest.dev
+- **Bemol** — e-commerce real da rede varejista Bemol: https://www.bemol.com.br
 
-O repositório contém apenas infraestrutura de testes — não há código de aplicação. Os testes cobrem os principais fluxos do sistema por meio de testes E2E (end-to-end) executados diretamente no navegador.
-
-**Aplicação testada:** https://front.serverest.dev
+O repositório contém apenas infraestrutura de testes — não há código de aplicação.
 
 ## Estrutura
 
+```
+cypress/
+  e2e/
+    FrontServeRest/
+      login.cy.js
+      home.cy.js
+      spec.cy.js
+      bemol/
+        produtos.cy.js
+  support/
+    commands.js
+    e2e.js
+  fixtures/
+docs/
+  FrontServeRest/
+    CT_login.md
+    CT_home.md
+    bemol/
+      CT_produtos.md
+cypress.config.js
+```
 
 ## Cobertura de testes
 
-### Tela de Login (`login.cy.js`)
+### ServeRest — Login (`login.cy.js`)
 
 | ID | Cenário |
 |----|---------|
@@ -24,7 +44,7 @@ O repositório contém apenas infraestrutura de testes — não há código de a
 | CT-005 | Login com e-mail não cadastrado |
 | CT-006 | Login via tecla Enter |
 
-### Tela Home (`home.cy.js`)
+### ServeRest — Home (`home.cy.js`)
 
 | ID | Cenário |
 |----|---------|
@@ -38,6 +58,18 @@ O repositório contém apenas infraestrutura de testes — não há código de a
 | CT-008 | Limpar lista de produtos |
 | CT-009 | Logout da home |
 | CT-010 | Proteção de rota sem autenticação |
+
+### Bemol — Cards de Produto (`bemol/produtos.cy.js`)
+
+| ID | Cenário |
+|----|---------|
+| CT-001 | Exibição da imagem do produto no card |
+| CT-002 | Exibição do nome do produto no card |
+| CT-003 | Exibição da marca do produto no card |
+| CT-004 | Exibição do preço promocional e parcelamento |
+| CT-005 | Botão "Mais detalhes" redireciona para a página do produto |
+| CT-006 | Botão "Adicionar ao carrinho" adiciona o produto |
+| CT-007 | Clique no nome do produto redireciona para a página do produto |
 
 ## Pré-requisitos
 
@@ -60,4 +92,5 @@ npx cypress run
 # Executar um spec específico
 npx cypress run --spec "cypress/e2e/FrontServeRest/login.cy.js"
 npx cypress run --spec "cypress/e2e/FrontServeRest/home.cy.js"
+npx cypress run --spec "cypress/e2e/FrontServeRest/bemol/produtos.cy.js"
 ```
