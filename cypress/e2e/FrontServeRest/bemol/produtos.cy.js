@@ -60,4 +60,28 @@ describe('Bemol - Cards de Produto', () => {
 
     cy.url().should('include', '/p')
   })
+
+  it('CT-008 - campo de busca deve estar visível e habilitado', () => {
+    cy.get('input[type="search"], input[placeholder*="busca"], input[placeholder*="pesquis"], input[class*="search"]')
+      .first()
+      .should('be.visible')
+      .and('be.enabled')
+  })
+
+  it('CT-009 - busca por produto válido deve retornar resultados', () => {
+    cy.get('input[type="search"], input[placeholder*="busca"], input[placeholder*="pesquis"], input[class*="search"]')
+      .first()
+      .type('Samsung{enter}')
+
+    cy.url().should('include', 'Samsung')
+    cy.get('a[href*="/p"]').should('have.length.greaterThan', 0)
+  })
+
+  it('CT-010 - busca por termo inexistente deve exibir mensagem de sem resultados', () => {
+    cy.get('input[type="search"], input[placeholder*="busca"], input[placeholder*="pesquis"], input[class*="search"]')
+      .first()
+      .type('xyzprodutoinexistente123{enter}')
+
+    cy.contains(/nenhum produto|não encontrado|sem resultado/i).should('be.visible')
+  })
 })

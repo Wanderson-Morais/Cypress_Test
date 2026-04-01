@@ -131,3 +131,59 @@ Início da análise para elaboração dos casos de teste da página de produtos 
 3. Clicar no link do nome do produto
 
 **Resultado esperado:** O usuário é redirecionado para a página de detalhes do produto, com a URL contendo `/p`
+
+---
+
+## CT-008 — Campo de busca visível e funcional
+
+**Cenário:**
+- **Dado** que o usuário esteja na página inicial da Bemol
+- **Quando** a página carregar
+- **Então** o campo de busca deve estar visível e habilitado para digitação
+
+**Pré-condição:** Nenhuma
+
+**Passos:**
+1. Acessar https://www.bemol.com.br/
+2. Localizar o campo de busca no header
+3. Verificar que o campo está visível e habilitado
+
+**Resultado esperado:** O campo de busca é exibido no header e aceita digitação
+
+---
+
+## CT-009 — Busca por produto válido retorna resultados
+
+**Cenário:**
+- **Dado** que o usuário esteja na página inicial da Bemol
+- **Quando** ele digitar o nome de um produto existente no campo de busca e confirmar
+- **Então** o sistema deve exibir uma lista de produtos relacionados ao termo pesquisado
+
+**Pré-condição:** Nenhuma
+
+**Passos:**
+1. Acessar https://www.bemol.com.br/
+2. Localizar o campo de busca no header
+3. Digitar `Samsung` no campo de busca
+4. Pressionar **Enter** ou clicar no botão de busca
+
+**Resultado esperado:** O sistema redireciona para a página de resultados e exibe produtos relacionados ao termo `Samsung`
+
+---
+
+## CT-010 — Busca por termo inexistente exibe mensagem de sem resultados
+
+**Cenário:**
+- **Dado** que o usuário esteja na página inicial da Bemol
+- **Quando** ele digitar um termo que não corresponde a nenhum produto e confirmar a busca
+- **Então** o sistema deve informar que nenhum produto foi encontrado
+
+**Pré-condição:** Nenhuma
+
+**Passos:**
+1. Acessar https://www.bemol.com.br/
+2. Localizar o campo de busca no header
+3. Digitar `xyzprodutoinexistente123` no campo de busca
+4. Pressionar **Enter** ou clicar no botão de busca
+
+**Resultado esperado:** O sistema exibe uma mensagem informando que nenhum produto foi encontrado para o termo pesquisado
