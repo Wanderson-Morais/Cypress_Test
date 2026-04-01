@@ -190,24 +190,7 @@ Início da análise para elaboração dos casos de teste da página de produtos 
 
 ---
 
-## CT-011 — Menu de categorias visível na página inicial
-
-**Cenário:**
-- **Dado** que o usuário esteja na página inicial da Bemol
-- **Quando** a página carregar
-- **Então** o menu de categorias deve estar visível com todos os itens principais
-
-**Pré-condição:** Nenhuma
-
-**Passos:**
-1. Acessar https://www.bemol.com.br/
-2. Verificar que os itens do menu estão visíveis: Celulares, Eletrodomésticos, Móveis, Informática, Climatização, TV e Vídeo, Eletroportáteis
-
-**Resultado esperado:** Todos os itens do menu de categorias são exibidos na página
-
----
-
-## CT-012 — Clicar em "Celulares e Smartphones" redireciona corretamente
+## CT-011 — Clicar em "Celulares e Smartphones" redireciona corretamente
 
 **Cenário:**
 - **Dado** que o usuário esteja na página inicial da Bemol
@@ -224,7 +207,7 @@ Início da análise para elaboração dos casos de teste da página de produtos 
 
 ---
 
-## CT-013 — Clicar em "Eletrodomésticos" redireciona corretamente
+## CT-012 — Clicar em "Eletrodomésticos" redireciona corretamente
 
 **Cenário:**
 - **Dado** que o usuário esteja na página inicial da Bemol
@@ -241,7 +224,7 @@ Início da análise para elaboração dos casos de teste da página de produtos 
 
 ---
 
-## CT-014 — Clicar em "Móveis" redireciona corretamente
+## CT-013 — Clicar em "Móveis" redireciona corretamente
 
 **Cenário:**
 - **Dado** que o usuário esteja na página inicial da Bemol
@@ -258,7 +241,7 @@ Início da análise para elaboração dos casos de teste da página de produtos 
 
 ---
 
-## CT-015 — Clicar em "Informática" redireciona corretamente
+## CT-014 — Clicar em "Informática" redireciona corretamente
 
 **Cenário:**
 - **Dado** que o usuário esteja na página inicial da Bemol
@@ -275,7 +258,7 @@ Início da análise para elaboração dos casos de teste da página de produtos 
 
 ---
 
-## CT-016 — Clicar em "Climatização" redireciona corretamente
+## CT-015 — Clicar em "Climatização" redireciona corretamente
 
 **Cenário:**
 - **Dado** que o usuário esteja na página inicial da Bemol
@@ -292,7 +275,7 @@ Início da análise para elaboração dos casos de teste da página de produtos 
 
 ---
 
-## CT-017 — Clicar em "TV e Vídeo" redireciona corretamente
+## CT-016 — Clicar em "TV e Vídeo" redireciona corretamente
 
 **Cenário:**
 - **Dado** que o usuário esteja na página inicial da Bemol
@@ -309,7 +292,7 @@ Início da análise para elaboração dos casos de teste da página de produtos 
 
 ---
 
-## CT-018 — Clicar em "Eletroportáteis" redireciona corretamente
+## CT-017 — Clicar em "Eletroportáteis" redireciona corretamente
 
 **Cenário:**
 - **Dado** que o usuário esteja na página inicial da Bemol

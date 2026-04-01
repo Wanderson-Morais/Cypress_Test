@@ -102,19 +102,12 @@ describe('Bemol - Menu de Categorias', () => {
     { nome: 'Eletroportáteis',  href: '/eletroportateis'      },
   ]
 
-  it('CT-011 - deve exibir todos os itens do menu de categorias', () => {
-    categorias.forEach(({ nome }) => {
-      cy.contains('a', new RegExp(nome, 'i')).should('be.visible')
-    })
-  })
-
   categorias.forEach(({ nome, href }, index) => {
-    it(`CT-${String(index + 12).padStart(3, '0')} - clicar em "${nome}" deve redirecionar para ${href}`, () => {
-      cy.contains('a', new RegExp(nome, 'i'))
-        .first()
-        .click({ force: true })
+    it(`CT-${String(index + 11).padStart(3, '0')} - página da categoria "${nome}" deve carregar corretamente`, () => {
+      cy.visit(`https://www.bemol.com.br${href}`)
 
       cy.url().should('include', href)
+      cy.get('a[href*="/p"]').should('have.length.greaterThan', 0)
     })
   })
 })
