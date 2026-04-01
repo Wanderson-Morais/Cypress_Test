@@ -187,3 +187,139 @@ Início da análise para elaboração dos casos de teste da página de produtos 
 4. Pressionar **Enter** ou clicar no botão de busca
 
 **Resultado esperado:** O sistema exibe uma mensagem informando que nenhum produto foi encontrado para o termo pesquisado
+
+---
+
+## CT-011 — Menu de categorias visível na página inicial
+
+**Cenário:**
+- **Dado** que o usuário esteja na página inicial da Bemol
+- **Quando** a página carregar
+- **Então** o menu de categorias deve estar visível com todos os itens principais
+
+**Pré-condição:** Nenhuma
+
+**Passos:**
+1. Acessar https://www.bemol.com.br/
+2. Verificar que os itens do menu estão visíveis: Celulares, Eletrodomésticos, Móveis, Informática, Climatização, TV e Vídeo, Eletroportáteis
+
+**Resultado esperado:** Todos os itens do menu de categorias são exibidos na página
+
+---
+
+## CT-012 — Clicar em "Celulares e Smartphones" redireciona corretamente
+
+**Cenário:**
+- **Dado** que o usuário esteja na página inicial da Bemol
+- **Quando** ele clicar na categoria "Celulares" no menu
+- **Então** o sistema deve redirecioná-lo para a página de celulares
+
+**Pré-condição:** Nenhuma
+
+**Passos:**
+1. Acessar https://www.bemol.com.br/
+2. Clicar em "Celulares" no menu de categorias
+
+**Resultado esperado:** A URL passa a conter `/celular-e-smartphone`
+
+---
+
+## CT-013 — Clicar em "Eletrodomésticos" redireciona corretamente
+
+**Cenário:**
+- **Dado** que o usuário esteja na página inicial da Bemol
+- **Quando** ele clicar na categoria "Eletrodomésticos" no menu
+- **Então** o sistema deve redirecioná-lo para a página de eletrodomésticos
+
+**Pré-condição:** Nenhuma
+
+**Passos:**
+1. Acessar https://www.bemol.com.br/
+2. Clicar em "Eletrodomésticos" no menu de categorias
+
+**Resultado esperado:** A URL passa a conter `/eletrodomesticos`
+
+---
+
+## CT-014 — Clicar em "Móveis" redireciona corretamente
+
+**Cenário:**
+- **Dado** que o usuário esteja na página inicial da Bemol
+- **Quando** ele clicar na categoria "Móveis" no menu
+- **Então** o sistema deve redirecioná-lo para a página de móveis
+
+**Pré-condição:** Nenhuma
+
+**Passos:**
+1. Acessar https://www.bemol.com.br/
+2. Clicar em "Móveis" no menu de categorias
+
+**Resultado esperado:** A URL passa a conter `/moveis`
+
+---
+
+## CT-015 — Clicar em "Informática" redireciona corretamente
+
+**Cenário:**
+- **Dado** que o usuário esteja na página inicial da Bemol
+- **Quando** ele clicar na categoria "Informática" no menu
+- **Então** o sistema deve redirecioná-lo para a página de informática
+
+**Pré-condição:** Nenhuma
+
+**Passos:**
+1. Acessar https://www.bemol.com.br/
+2. Clicar em "Informática" no menu de categorias
+
+**Resultado esperado:** A URL passa a conter `/informatica`
+
+---
+
+## CT-016 — Clicar em "Climatização" redireciona corretamente
+
+**Cenário:**
+- **Dado** que o usuário esteja na página inicial da Bemol
+- **Quando** ele clicar na categoria "Climatização" no menu
+- **Então** o sistema deve redirecioná-lo para a página de climatização
+
+**Pré-condição:** Nenhuma
+
+**Passos:**
+1. Acessar https://www.bemol.com.br/
+2. Clicar em "Climatização" no menu de categorias
+
+**Resultado esperado:** A URL passa a conter `/ar-e-ventilacao`
+
+---
+
+## CT-017 — Clicar em "TV e Vídeo" redireciona corretamente
+
+**Cenário:**
+- **Dado** que o usuário esteja na página inicial da Bemol
+- **Quando** ele clicar na categoria "TV e Vídeo" no menu
+- **Então** o sistema deve redirecioná-lo para a página de TV e vídeo
+
+**Pré-condição:** Nenhuma
+
+**Passos:**
+1. Acessar https://www.bemol.com.br/
+2. Clicar em "TV e Vídeo" no menu de categorias
+
+**Resultado esperado:** A URL passa a conter `/tv-e-video`
+
+---
+
+## CT-018 — Clicar em "Eletroportáteis" redireciona corretamente
+
+**Cenário:**
+- **Dado** que o usuário esteja na página inicial da Bemol
+- **Quando** ele clicar na categoria "Eletroportáteis" no menu
+- **Então** o sistema deve redirecioná-lo para a página de eletroportáteis
+
+**Pré-condição:** Nenhuma
+
+**Passos:**
+1. Acessar https://www.bemol.com.br/
+2. Clicar em "Eletroportáteis" no menu de categorias
+
+**Resultado esperado:** A URL passa a conter `/eletroportateis`

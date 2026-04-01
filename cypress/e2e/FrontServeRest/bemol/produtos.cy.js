@@ -85,3 +85,36 @@ describe('Bemol - Cards de Produto', () => {
     cy.contains(/Desculpe, não encontramos o que você procurava./i).should('be.visible')
   })
 })
+
+describe('Bemol - Menu de Categorias', () => {
+  beforeEach(() => {
+    cy.on('uncaught:exception', () => false)
+    cy.visit('https://www.bemol.com.br/')
+  })
+
+  const categorias = [
+    { nome: 'Celulares',        href: '/celular-e-smartphone' },
+    { nome: 'Eletrodomésticos', href: '/eletrodomesticos'     },
+    { nome: 'Móveis',           href: '/moveis'               },
+    { nome: 'Informática',      href: '/informatica'          },
+    { nome: 'Climatização',     href: '/ar-e-ventilacao'      },
+    { nome: 'TV e Vídeo',       href: '/tv-e-video'           },
+    { nome: 'Eletroportáteis',  href: '/eletroportateis'      },
+  ]
+
+  it('CT-011 - deve exibir todos os itens do menu de categorias', () => {
+    categorias.forEach(({ nome }) => {
+      cy.contains('a', new RegExp(nome, 'i')).should('be.visible')
+    })
+  })
+
+  categorias.forEach(({ nome, href }, index) => {
+    it(`CT-${String(index + 12).padStart(3, '0')} - clicar em "${nome}" deve redirecionar para ${href}`, () => {
+      cy.contains('a', new RegExp(nome, 'i'))
+        .first()
+        .click({ force: true })
+
+      cy.url().should('include', href)
+    })
+  })
+})
