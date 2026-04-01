@@ -62,14 +62,14 @@ describe('Bemol - Cards de Produto', () => {
   })
 
   it('CT-008 - campo de busca deve estar visível e habilitado', () => {
-    cy.get('input[type="search"], input[placeholder*="busca"], input[placeholder*="pesquis"], input[class*="search"]')
+    cy.get('input[class*="search"], input[class*="Search"], input[class*="vtex-search"], input[class*="searchbar"], [class*="search"] input, [class*="Search"] input')
       .first()
       .should('be.visible')
       .and('be.enabled')
   })
 
   it('CT-009 - busca por produto válido deve retornar resultados', () => {
-    cy.get('input[type="search"], input[placeholder*="busca"], input[placeholder*="pesquis"], input[class*="search"]')
+    cy.get('input[class*="search"], input[class*="Search"], input[class*="vtex-search"], input[class*="searchbar"], [class*="search"] input, [class*="Search"] input')
       .first()
       .type('Samsung{enter}')
 
@@ -78,10 +78,10 @@ describe('Bemol - Cards de Produto', () => {
   })
 
   it('CT-010 - busca por termo inexistente deve exibir mensagem de sem resultados', () => {
-    cy.get('input[type="search"], input[placeholder*="busca"], input[placeholder*="pesquis"], input[class*="search"]')
+    cy.get('input[class*="search"], input[class*="Search"], input[class*="vtex-search"], input[class*="searchbar"], [class*="search"] input, [class*="Search"] input')
       .first()
       .type('xyzprodutoinexistente123{enter}')
 
-    cy.contains(/nenhum produto|não encontrado|sem resultado/i).should('be.visible')
+    cy.contains(/Desculpe, não encontramos o que você procurava./i).should('be.visible')
   })
 })
