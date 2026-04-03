@@ -133,3 +133,47 @@ describe('Bemol - Chatbot Bob', () => {
       .should('be.visible')
   })
 })
+
+describe('Bemol - Carrinho', () => {
+  beforeEach(() => {
+    cy.on('uncaught:exception', () => false)
+    cy.visit('https://www.bemol.com.br/')
+  })
+
+  it('CT-020 - deve adicionar um produto ao carrinho', () => {
+    cy.contains('button', /adicionar ao carrinho/i)
+      .first()
+      .click({ force: true })
+
+    cy.get('[class*="minicart"], [class*="cart"], [class*="sidebar"]', { timeout: 10000 })
+      .should('exist')
+  })
+
+  it('CT-021 - contador do carrinho deve atualizar ao adicionar produto', () => {
+    cy.contains('button', /adicionar ao carrinho/i)
+      .first()
+      .click({ force: true })
+
+    cy.get('[class*="minicart"] [class*="badge"], [class*="cart"] [class*="badge"], [class*="cart"] [class*="count"], [class*="cartIcon"] span', { timeout: 10000 })
+      .should('exist')
+      .and(($el) => {
+        expect(parseInt($el.text())).to.be.greaterThan(0)
+      })
+  })
+
+  it('CT-022 - deve remover um produto do carrinho', () => {
+    cy.contains('button', /adicionar ao carrinho/i)
+      .first()
+      .click({ force: true })
+
+    cy.get('[class*="minicart"], [class*="cart-sidebar"]', { timeout: 10000 })
+      .should('exist')
+
+    cy.contains('button', /remover|remove|excluir/i)
+      .first()
+      .click({ force: true })
+
+    cy.contains(/carrinho vazio|seu carrinho está vazio|nenhum produto/i, { timeout: 10000 })
+      .should('exist')
+  })
+})

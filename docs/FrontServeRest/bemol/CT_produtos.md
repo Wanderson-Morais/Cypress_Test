@@ -342,3 +342,59 @@ Início da análise para elaboração dos casos de teste da página de produtos 
 3. Clicar no widget do Bob
 
 **Resultado esperado:** A janela do chat é aberta e exibida ao usuário
+
+---
+
+## CT-020 — Adicionar produto ao carrinho
+
+**Cenário:**
+- **Dado** que o usuário esteja na página inicial da Bemol
+- **Quando** ele clicar em "Adicionar ao carrinho" em um produto
+- **Então** o produto deve ser adicionado e o carrinho deve ser exibido
+
+**Pré-condição:** Nenhuma
+
+**Passos:**
+1. Acessar https://www.bemol.com.br/
+2. Localizar um card de produto
+3. Clicar no botão "Adicionar ao carrinho"
+
+**Resultado esperado:** O produto é adicionado e o mini-carrinho ou sidebar do carrinho é exibido
+
+---
+
+## CT-021 — Contador do carrinho deve atualizar ao adicionar produto
+
+**Cenário:**
+- **Dado** que o usuário esteja na página inicial da Bemol com o carrinho vazio
+- **Quando** ele adicionar um produto ao carrinho
+- **Então** o contador no ícone do carrinho no header deve ser incrementado
+
+**Pré-condição:** Carrinho sem itens
+
+**Passos:**
+1. Acessar https://www.bemol.com.br/
+2. Localizar um card de produto
+3. Clicar no botão "Adicionar ao carrinho"
+4. Verificar o contador no ícone do carrinho no header
+
+**Resultado esperado:** O contador do carrinho exibe um número maior que zero
+
+---
+
+## CT-022 — Remover produto do carrinho
+
+**Cenário:**
+- **Dado** que o usuário tenha ao menos um produto no carrinho
+- **Quando** ele remover o produto pelo carrinho
+- **Então** o carrinho deve ficar vazio e exibir mensagem correspondente
+
+**Pré-condição:** Ao menos um produto adicionado ao carrinho
+
+**Passos:**
+1. Acessar https://www.bemol.com.br/
+2. Adicionar um produto ao carrinho
+3. Abrir o carrinho
+4. Clicar no botão de remover o produto
+
+**Resultado esperado:** O produto é removido e o carrinho exibe mensagem de carrinho vazio
