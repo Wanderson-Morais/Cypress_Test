@@ -111,3 +111,25 @@ describe('Bemol - Menu de Categorias', () => {
     })
   })
 })
+
+describe('Bemol - Chatbot Bob', () => {
+  beforeEach(() => {
+    cy.on('uncaught:exception', () => false)
+    cy.visit('https://www.bemol.com.br/')
+  })
+
+  it('CT-018 - widget do Bob deve estar visível no canto inferior direito', () => {
+    cy.get('[id*="bob"], [class*="bob"], [id*="chat"], [class*="chat-widget"], [id*="blip"], iframe[title*="chat" i]', { timeout: 10000 })
+      .first()
+      .should('exist')
+  })
+
+  it('CT-019 - clicar no widget do Bob deve abrir o chat', () => {
+    cy.get('[id*="bob"], [class*="bob"], [id*="chat"], [class*="chat-widget"], [id*="blip"], iframe[title*="chat" i]', { timeout: 10000 })
+      .first()
+      .click({ force: true })
+
+    cy.get('[id*="bob"], [class*="bob"], [id*="chat-open"], [class*="chat-open"], iframe[title*="chat" i]', { timeout: 10000 })
+      .should('be.visible')
+  })
+})

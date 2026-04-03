@@ -306,3 +306,39 @@ Início da análise para elaboração dos casos de teste da página de produtos 
 2. Clicar em "Eletroportáteis" no menu de categorias
 
 **Resultado esperado:** A URL passa a conter `/eletroportateis`
+
+---
+
+## CT-018 — Widget do Bob visível no canto inferior direito
+
+**Cenário:**
+- **Dado** que o usuário esteja na página inicial da Bemol
+- **Quando** a página carregar completamente
+- **Então** o widget do chatbot Bob deve estar visível no canto inferior direito da tela
+
+**Pré-condição:** Nenhuma
+
+**Passos:**
+1. Acessar https://www.bemol.com.br/
+2. Aguardar o carregamento completo da página
+3. Verificar a presença do widget do Bob no canto inferior direito
+
+**Resultado esperado:** O widget do chatbot Bob está visível no canto inferior direito da página
+
+---
+
+## CT-019 — Clicar no widget do Bob deve abrir o chat
+
+**Cenário:**
+- **Dado** que o usuário esteja na página inicial da Bemol e o widget do Bob esteja visível
+- **Quando** ele clicar no widget do Bob
+- **Então** a janela do chat deve abrir
+
+**Pré-condição:** Widget do Bob visível na página
+
+**Passos:**
+1. Acessar https://www.bemol.com.br/
+2. Aguardar o carregamento do widget do Bob
+3. Clicar no widget do Bob
+
+**Resultado esperado:** A janela do chat é aberta e exibida ao usuário
