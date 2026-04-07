@@ -140,7 +140,7 @@ describe('Bemol - Carrinho', () => {
     cy.visit('https://www.bemol.com.br/')
   })
 
-  it('CT-020 - deve adicionar um produto ao carrinho', () => {
+  it.only('CT-020 - deve adicionar um produto ao carrinho', () => {
     cy.contains('button', /adicionar ao carrinho/i)
       .first()
       .click({ force: true })
@@ -149,7 +149,7 @@ describe('Bemol - Carrinho', () => {
       .should('exist')
   })
 
-  it('CT-021 - contador do carrinho deve atualizar ao adicionar produto', () => {
+  it.only('CT-021 - contador do carrinho deve atualizar ao adicionar produto', () => {
     cy.contains('button', /adicionar ao carrinho/i)
       .first()
       .click({ force: true })
@@ -161,7 +161,7 @@ describe('Bemol - Carrinho', () => {
       })
   })
 
-  it('CT-022 - deve remover um produto do carrinho', () => {
+  it.only('CT-022 - deve remover um produto do carrinho', () => {
     cy.contains('button', /adicionar ao carrinho/i)
       .first()
       .click({ force: true })
@@ -169,7 +169,7 @@ describe('Bemol - Carrinho', () => {
     cy.get('[class*="minicart"], [class*="cart-sidebar"]', { timeout: 10000 })
       .should('exist')
 
-    cy.contains('button', /remover|remove|excluir/i)
+    cy.get('[data-product-item-remove="desktop"] > .bemolqa-checkout-custom-15-x-productItemRemoverWrapper')
       .first()
       .click({ force: true })
 
